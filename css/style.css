@@ -343,11 +343,9 @@ p {
 
 
 
-/*services*/
 /* =========================
    SERVICES SECTION - FULL WIDTH
 ========================= */
-
 .services-section {
   width: 100%;
   padding: 80px 20px;
@@ -375,14 +373,14 @@ p {
 }
 
 .service-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 /* IMAGE COVERING UPPER HALF */
 .service-card .service-img {
   width: 100%;
-  height: 200px; /* upper half of card */
+  height: 200px; /* default desktop size */
   background-size: cover;
   background-position: center;
 }
@@ -416,37 +414,228 @@ p {
   transform: scale(1.05);
 }
 
+/* =============================
+   RESPONSIVE STYLING
+============================= */
+
+/* Medium screens (tablets) */
+@media (max-width: 992px) {
+  .service-card .service-img {
+    height: 180px;
+  }
+
+  .service-card h3.card-title {
+    font-size: 22px;
+  }
+
+  .service-card p {
+    font-size: 15px;
+  }
+
+  .service-card button {
+    padding: 10px 24px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* single column for mobile */
+    gap: 25px;
+  }
+
+  .service-card .service-img {
+    height: 160px;
+  }
+
+  .service-card h3.card-title {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+  }
+
+  .service-card button {
+    width: 100%; /* full width button on mobile */
+    padding: 12px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .service-card .service-img {
+    height: 200px;
+  }
+
+  .service-card h3.card-title {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+}
+@media (max-width: 768px) {
+  .service-card button {
+    width: calc(100% - 40px); /* full card width minus horizontal padding */
+    margin: 0 20px 20px 20px; /* keep vertical spacing */
+    padding: 12px 0; /* smaller horizontal padding */
+    box-sizing: border-box; /* ensure it fits inside the card */
+  }
+}
+
+
 
 
 
 
 /* WHY CHOOSE US SECTION */
+
 .why-choose-us {
   background-color: var(--primary-blue);
+  color: var(--white); /* Assuming white text for contrast on blue background */
+  padding: 50px 20px; /* Adjust padding as needed */
+  font-family: var(--font-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* For responsiveness */
+}
+
+/* Image on the left */
+.why-choose-us .image {
+  flex: 1;
+  max-width: 50%;
+  padding-right: 20px; /* Space between image and content */
+}
+
+.why-choose-us .image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional styling */
+}
+
+/* Content on the right */
+.why-choose-us .content {
+  flex: 1;
+  max-width: 50%;
+  padding-left: 20px; /* Space between content and image */
+}
+
+.why-choose-us .content h2 {
   color: var(--white);
-}
-
-/* Title underline */
-.why-choose-us .heading-underline::after {
-  background-color: var(--white);
-}
-
-/* Center Image */
-.why-image img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--white);
-}
-
-/* Left & Right Points */
-.why-left, .why-right {
-  max-width: 250px;
-}
-
-.why-left p, .why-right p {
-  font-size: 16px;
-  line-height: 1.6;
   margin-bottom: 20px;
+}
+
+.why-choose-us .content p {
+  color: var(--light-grey);
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* CTA Button */
+.why-choose-us .cta-button {
+  background-color: var(--accent-red); /* Using accent-red for contrast */
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.why-choose-us .cta-button:hover {
+  background-color: #d32f2f; /* Darker shade of accent-red for hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .why-choose-us {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .why-choose-us .image,
+  .why-choose-us .content {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .why-choose-us .image {
+    margin-bottom: 20px;
+  }
+}
+.why-choose-us .why-points {
+  list-style: none; /* Remove bullets if any */
+  padding: 0;
+  margin-bottom: 30px; /* space after the list */
+}
+
+.why-choose-us .why-points li {
+  margin-bottom: 20px; /* increased spacing between items */
+  font-size: 16px;
+  line-height: 1.8; /* slightly more for readability */
+}
+
+
+
+
+.process-section {
+  background-color: var(--white);
+  padding: 60px 20px;
+  font-family: var(--font-primary);
+}
+
+/* Step */
+.process-step {
+  transition: transform 0.3s;
+}
+
+/* Hover animation for entire step */
+.process-step:hover {
+  transform: translateY(-10px);
+}
+
+/* Icon Circle */
+.process-step .icon-circle {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Icon hover effect */
+.process-step .icon-circle:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Step Title */
+.process-step h5 {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+/* Step Description */
+.process-step p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .process-step {
+    margin-bottom: 20px;
+  }
 }
