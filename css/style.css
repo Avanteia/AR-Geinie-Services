@@ -137,12 +137,10 @@ p {
   color: var(--primary-blue);
 }
 
-/* Active link underline */
 .navbar-nav .nav-link.active {
   position: relative;
 }
 
-/* Primary blue underline */
 .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
@@ -153,7 +151,6 @@ p {
   background-color: var(--primary-blue);
 }
 
-/* Accent red underline (smaller) */
 .navbar-nav .nav-link.active::before {
   content: "";
   position: absolute;
@@ -165,8 +162,6 @@ p {
   border-radius: 2px;
 }
 
-
-/* Mobile toggle fix */
 .navbar-toggler {
   border: none;
 }
@@ -179,7 +174,9 @@ p {
 
 
 
-/* HERO */
+/* =========================
+  HERO SECTION
+========================= */
 .hero-section {
   height: 80vh;
   position: relative;
@@ -213,7 +210,6 @@ p {
   padding-top: 130px;
 }
 
-/* Small badge */
 .hero-badge {
   display: inline-block;
   background: rgba(255,255,255,0.15);
@@ -223,7 +219,6 @@ p {
   margin-bottom: 14px;
 }
 
-/* Title */
 .hero-title {
   font-size: 3.2rem;
   font-weight: 700;
@@ -231,7 +226,6 @@ p {
   margin-bottom: 18px;
 }
 
-/* Accent highlight */
 .text-accent {
   position: relative;
   color: #ffffff;
@@ -248,7 +242,6 @@ p {
   z-index: -1;
 }
 
-/* Description */
 .hero-desc {
   font-size: 1.1rem;
   max-width: 520px;
@@ -257,7 +250,6 @@ p {
   color: white;
 }
 
-/* CTA */
 .hero-cta .btn {
   padding: 14px 34px;
   font-weight: 600;
