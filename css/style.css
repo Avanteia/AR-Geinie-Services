@@ -1254,112 +1254,91 @@ body {
 
 
 /* ================= ABOUT ================= */
-.service-about {
-  padding: 80px 0;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.about-image img {
-  width: 100%;
-  max-width: 450px;
-}
-
-.about-content h2 {
-  color: #213993;
-  margin-bottom: 16px;
-}
-
-.about-content p {
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.about-content ul {
-  list-style: none;
-}
-
-.about-content li {
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
 .taxation-cards {
-  background: #f5f7fc;
-  padding: 70px 0;
+  background: linear-gradient(180deg, #f8faff 0%, #eef2ff 100%);
+  padding: 90px 0;
 }
 
 /* Grid */
 .tax-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 35px;
 }
 
 /* Card */
 .tax-card {
   background: #ffffff;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(33, 57, 147, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .tax-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(33, 57, 147, 0.15);
 }
 
-/* Header */
-.tax-card-header {
+/* Icon Circle */
+.tax-icon {
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #213993, #4f6bff);
+  color: #fff;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(33, 57, 147, 0.2);
 }
 
-.tax-card-header img {
-  width: 48px;
-}
-
-.tax-card-header h3 {
+/* Title */
+.tax-card h3 {
   color: #213993;
   font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 
-/* Text */
+/* Description */
 .tax-card p {
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 14px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 18px;
 }
 
 /* List */
 .tax-card ul {
   padding-left: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .tax-card ul li {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+  color: #444;
 }
 
 /* Button */
 .tax-btn {
   display: inline-block;
-  background: #25D366;
-  color: #ffffff;
-  padding: 10px 24px;
-  border-radius: 24px;
-  text-decoration: none;
-  font-weight: 600;
+  background: #213993;
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 30px;
   font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.tax-btn:hover {
+  background: #162766;
 }
 
 /* Responsive */
@@ -1367,7 +1346,12 @@ body {
   .tax-grid {
     grid-template-columns: 1fr;
   }
+
+  .tax-card {
+    padding: 30px;
+  }
 }
+
 
 
 
@@ -1482,6 +1466,315 @@ body {
 
 @media (max-width: 600px) {
   .importance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/*GALLERY*/
+/* ================= GALLERY SECTION ================= */
+
+.tax-gallery {
+  padding: 90px 0;
+  background: #f8faff;
+  overflow: hidden;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #213993;
+  margin-bottom: 50px;
+}
+
+/* Wrapper */
+.gallery-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Moving Track */
+.gallery-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: scrollGallery 25s linear infinite;
+}
+
+/* Animation */
+@keyframes scrollGallery {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Images */
+.gallery-img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* ================= MODAL ================= */
+
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+.modal-img {
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 20px;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= ABOUT CARDS ================= */
+
+.about-cards-section {
+  background: #ffffff;
+  padding: 70px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.about-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.about-icon {
+  width: 60px;
+  height: 60px;
+  background: #eef2ff;
+  color: #213993;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  font-size: 22px;
+}
+
+.about-card h4 {
+  color: #213993;
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================= CONTACT SECTION ================= */
+
+.contact-section {
+  padding: 80px 0;
+  background: #f8f9fc;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+}
+
+/* ===== FORM BOX ===== */
+
+.contact-form-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+}
+
+.contact-form-box h2 {
+  color: #213993;
+  margin-bottom: 10px;
+}
+
+.contact-form-box p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #e1e5f0;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #213993;
+  box-shadow: 0 0 0 2px rgba(33,57,147,0.1);
+}
+
+.contact-btn {
+  background: #213993;
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #162c74;
+}
+
+/* ===== INFO CARDS ===== */
+
+.contact-info {
+  display: grid;
+  gap: 20px;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card i {
+  font-size: 22px;
+  color: #213993;
+  margin-bottom: 10px;
+}
+
+.info-card h4 {
+  margin-bottom: 6px;
+  color: #213993;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-info {
     grid-template-columns: 1fr;
   }
 }

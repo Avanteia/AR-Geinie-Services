@@ -37,3 +37,27 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
       item.classList.toggle("active");
     });
   });
+
+
+
+  const images = document.querySelectorAll(".gallery-img");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".close-btn");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  modal.onclick = function(e) {
+    if (e.target !== modalImg) {
+      modal.style.display = "none";
+    }
+  };
