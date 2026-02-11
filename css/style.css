@@ -141,7 +141,7 @@ p {
   position: relative;
 }
 
-.navbar-nav .nav-link.active::after {
+/* .navbar-nav .nav-link.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -149,9 +149,9 @@ p {
   width: 100%;
   height: 2px;
   background-color: var(--primary-blue);
-}
+} */
 
-.navbar-nav .nav-link.active::before {
+/* .navbar-nav .nav-link.active::before {
   content: "";
   position: absolute;
   left: 0%;
@@ -160,7 +160,7 @@ p {
   height: 2px;
   background-color: var(--accent-red);
   border-radius: 2px;
-}
+} */
 
 .navbar-toggler {
   border: none;
@@ -177,7 +177,7 @@ p {
 /* =========================
   HERO SECTION
 ========================= */
-.hero-section {
+/* .hero-section {
   height: 80vh;
   position: relative;
   overflow: hidden;
@@ -255,20 +255,72 @@ p {
   font-weight: 600;
   border-radius: 8px;
   margin-top: -10px;
+} */
+
+
+/* HERO SECTION */
+
+
+.finance-hero {
+  background: var(--white);
+  color: #fff;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.hero-title span {
+  color: var(--primary-blue);
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+.hero-services h6 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.hero-services p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.service-box {
+  padding: 10px 15px;
+}
+
+
+.hero-img {
+  max-width: 100%;
+}
+/* Mobile spacing fix */
+@media (max-width: 767px) {
+  .hero-img {
+    margin-top: 30px;   /* increase space above image */
+  }
 }
 
 
 
+/* Section Background */
 .info-section {
-  background: #ffffff;
+  background: #213993; /* Primary Blue */
+  color: #ffffff;
 }
 
+/* Column */
 .info-col {
   padding: 5px 30px;
   position: relative;
 }
 
-/* Vertical dividers (desktop only) */
+/* Divider Line */
 .info-col:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -276,25 +328,42 @@ p {
   right: 0;
   width: 1px;
   height: 60%;
-  background: #E8EAE9;
+  background: rgba(255, 255, 255, 0.3); /* light divider */
 }
 
-/* Icon style */
+/* Icon Circle */
 .info-icon {
-  font-size: 2.4rem;
-  color: #213993;
-  margin-bottom: 12px;
+  width: 70px;
+  height: 70px;
+  background: #ffffff; /* white circle */
+  color: #213993; /* primary blue icon */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 15px;
+
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+/* Hover animation */
+.info-col:hover .info-icon {
+  transform: translateY(-6px) scale(1.1);
+  background: #ED3833; /* accent red */
+  color: #ffffff;
 }
 
 /* Text */
 .info-col h5 {
   font-weight: 600;
   margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .info-col p {
   font-size: 0.95rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Remove divider on mobile */
@@ -303,33 +372,7 @@ p {
     display: none;
   }
 }
-/* Icon base */
-.info-icon {
-  font-size: 2.4rem;
-  color: #213993;
-  margin-bottom: 12px;
-  display: inline-block;
 
-  transition: transform 0.35s ease, color 0.35s ease;
-}
-
-/* Hover animation */
-.info-col:hover .info-icon {
-  transform: translateY(-6px) scale(1.15);
-  color: #ED3833; /* accent red */
-}
-
-/* Subtle entry animation */
-@keyframes iconFloat {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 
 
