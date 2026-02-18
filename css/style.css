@@ -381,6 +381,16 @@ p {
 /* =========================
    SERVICES SECTION - FULL WIDTH
 ========================= */
+.service-card .btn-primary-blue {
+  display: inline-block;     /* makes it behave like button */
+  margin: 0 20px 20px 20px;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
 .services-section {
   width: 100%;
   padding: 80px 20px;
@@ -1096,10 +1106,19 @@ p {
 }
 
 .footer-logo {
-  height: 42px;
+  height: 60px;
   width: auto;
   object-fit: contain;
 }
+.footer-contact a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
 
 /* Mobile alignment */
 @media (max-width: 768px) {
@@ -1296,74 +1315,96 @@ body {
 
 
 
-/* ================= ABOUT ================= */
+/* ================= services cards individual page ================= */
 .taxation-cards {
-  background: linear-gradient(180deg, #f8faff 0%, #eef2ff 100%);
-  padding: 90px 0;
+  background: linear-gradient(180deg, #f9fbff 0%, #eef2ff 100%);
+  padding: 120px 0;
 }
 
-/* Grid */
+/* One card per row */
 .tax-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }
 
 /* Card */
 .tax-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #ffffff;
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 15px 40px rgba(33, 57, 147, 0.08);
-  transition: all 0.35s ease;
-  position: relative;
-  overflow: hidden;
+  padding: 70px;
+  border-radius: 10px;
+  box-shadow: 0 25px 70px rgba(33, 57, 147, 0.08);
+  transition: 0.4s ease;
 }
 
 .tax-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(33, 57, 147, 0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 35px 90px rgba(33, 57, 147, 0.15);
 }
 
-/* Icon Circle */
+/* Reverse layout */
+.tax-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Content */
+.tax-content {
+  width: 55%;
+}
+
+/* Image */
+.tax-image {
+  width: 40%;
+  text-align: center;
+}
+
+.tax-image img {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Icon */
 .tax-icon {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   background: linear-gradient(135deg, #213993, #4f6bff);
   color: #fff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(33, 57, 147, 0.2);
+  font-size: 24px;
+  margin-bottom: 25px;
+  box-shadow: 0 15px 30px rgba(33, 57, 147, 0.2);
 }
 
 /* Title */
 .tax-card h3 {
+  font-size: 2rem;
   color: #213993;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Description */
+/* Text */
 .tax-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: #555;
-  margin-bottom: 18px;
+  margin-bottom: 25px;
 }
 
 /* List */
 .tax-card ul {
-  padding-left: 18px;
-  margin-bottom: 25px;
+  padding-left: 20px;
+  margin-bottom: 30px;
 }
 
 .tax-card ul li {
-  margin-bottom: 8px;
-  font-size: 0.92rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
   color: #444;
 }
 
@@ -1372,9 +1413,8 @@ body {
   display: inline-block;
   background: #213993;
   color: #fff;
-  padding: 10px 26px;
-  border-radius: 30px;
-  font-size: 0.9rem;
+  padding: 14px 34px;
+  border-radius: 40px;
   font-weight: 600;
   text-decoration: none;
   transition: 0.3s ease;
@@ -1386,14 +1426,30 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .tax-grid {
-    grid-template-columns: 1fr;
+  .tax-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
   }
 
-  .tax-card {
-    padding: 30px;
+  .tax-card.reverse {
+    flex-direction: column;
+  }
+
+  .tax-content,
+  .tax-image {
+    width: 100%;
+  }
+
+  .tax-image {
+    margin-top: 30px;
+  }
+
+  .tax-image img {
+    max-width: 300px;
   }
 }
+
 
 
 
@@ -1818,6 +1874,128 @@ body {
 
 @media (max-width: 600px) {
   .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+.mf-section {
+  padding: 90px 0;
+  background: linear-gradient(180deg, #f8faff 0%, #eef2ff 100%);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Top Layout */
+.mf-top {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 70px;
+}
+
+.mf-image {
+  flex: 1.2;   /* give image more space */
+}
+
+.mf-image img {
+  width: 100%;
+  height: auto;          /* makes it big */
+  object-fit: cover;      /* prevents stretching */
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.mf-content {
+  flex: 1;
+}
+
+.mf-content h2 {
+  font-size: 40px;
+  color: #0a1f44;
+  margin-bottom: 20px;
+}
+
+.mf-content p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+  .mf-top {
+    flex-direction: column;
+  }
+
+  .mf-image img {
+    height: 400px;
+  }
+}
+
+
+/* Services Grid */
+.mf-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.mf-card {
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 30px 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.mf-card:hover {
+  border: 1px solid #0a1f44;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+}
+
+/* Icon */
+.mf-card i {
+  font-size: 28px;
+  color: #0a1f44;
+  margin-bottom: 15px;
+}
+
+/* Title */
+.mf-card h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #0a1f44;
+}
+
+/* Description */
+.mf-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .mf-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mf-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mf-services {
     grid-template-columns: 1fr;
   }
 }
