@@ -45,7 +45,11 @@
         +91 9503822058
       </a>
     </div>
-
+<div class="d-flex align-items-center me-md-3 mb-1 mb-md-0">
+      <a href="tel:+919284052058" class="text-white text-decoration-none">
+         +91 9284052058
+      </a>
+    </div>
     <!-- Divider (Only visible on desktop) -->
     <div class="vr me-3 bg-white d-none d-md-block"></div>
 
@@ -62,11 +66,12 @@
 </div>
 
     <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg navbar-white sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-white sticky-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <img src="images/logo.webp" alt="AR Geinie Services" class="navbar-logo">
-    </a>
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+  <img src="images/logo.webp" alt="AR Geinie Services" class="navbar-logo">
+  <span class="fw-bold fs-5 mb-0">AR Geinie Services</span>
+</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -93,9 +98,20 @@
         <li class="nav-item">
           <a class="nav-link" href="contact.html">Contact</a>
         </li>
-       <li class="nav-item ms-lg-3 mt-2 mt-lg-0 w-100 w-lg-auto">
-  <a href="https://wa.me/9503822058" target="_blank" class="btn btn-primary-blue w-100 w-lg-auto d-block">
-    Get Started
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+  <a href="tel:+919503822058" 
+     class="btn nav-custom-btn border"
+     style="background-color: white; color: color;">
+    Call Now
+  </a>
+</li>
+
+<li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+  <a href="https://wa.me/919503822058" 
+     target="_blank"
+     class="btn nav-custom-btn"
+     style="background-color: var(--primary-blue); color: white;">
+    Book Consultation
   </a>
 </li>
       </ul>
@@ -139,57 +155,87 @@
         <h2>Get In Touch</h2>
         <p>Have questions? Fill out the form and our team will get back to you shortly.</p>
 
-        <form>
-          <div class="form-group">
-            <input type="text" placeholder="Full Name" required>
-          </div>
+        <form action="https://formsubmit.co/vijayamasekar19@gmail.com" method="POST">
 
-          <div class="form-group">
-            <input type="email" placeholder="Email Address" required>
-          </div>
+  <input type="hidden" name="_subject" value="New Contact Form Message">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
-          <div class="form-group">
-            <input type="tel" placeholder="Phone Number">
-          </div>
+  <input type="hidden" name="_replyto" value="Email">
 
-          <div class="form-group">
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-          </div>
+  <div class="form-group">
+    <input type="text" name="Full Name" placeholder="Full Name" required>
+  </div>
 
-          <button type="submit" class="contact-btn">
-            Send Message
-          </button>
-        </form>
+  <div class="form-group">
+    <input type="email" name="Email" placeholder="Email Address" required>
+  </div>
+
+  <div class="form-group">
+    <input type="tel" name="Phone" placeholder="Phone Number">
+  </div>
+
+  <div class="form-group">
+    <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
+  </div>
+
+  <button type="submit" class="contact-btn">
+    Send Message
+  </button>
+
+</form>
       </div>
 
       <!-- ===== RIGHT : CONTACT INFO CARDS ===== -->
-      <div class="contact-info">
+  <div class="contact-info">
 
-        <div class="info-card">
-          <i class="fa-solid fa-phone"></i>
-          <h4>Call Us</h4>
-          <p>+91 9503822058</p>
-        </div>
+  <!-- Call -->
+  <div class="info-card">
+  <i class="fa-solid fa-phone"></i>
+  <h4>Call Us</h4>
+  <p>
+    <a href="tel:+919503822058">+91 9503822058</a>
+  </p>
+  <p>
+    <a href="tel:+919284052058">+91 9284052058</a>
+  </p>
+</div>
 
-        <div class="info-card">
-          <i class="fa-solid fa-envelope"></i>
-          <h4>Email</h4>
-          <p>argenieservices@gmail.com</p>
-        </div>
+  <!-- Email -->
+  <div class="info-card">
+    <i class="fa-solid fa-envelope"></i>
+    <h4>Email</h4>
+    <p>argenieservices@gmail.com</p>
+  </div>
 
-        <div class="info-card">
-          <i class="fa-solid fa-location-dot"></i>
-          <h4>Office Address</h4>
-          <p>OFFICE NO F28, 2ND FLOOR, KENI WADO, behind SATYAHEERA HOTEL, Mapusa, 403507</p>
-        </div>
+  <!-- Registered Office -->
+  <div class="info-card">
+    <i class="fa-solid fa-location-dot"></i>
+    <h4>Registered Office</h4>
+    <p>
+      Flat G2, House No 711/16/2,
+      Nandanvan Apartments,
+      Green Hill Colony
+      Porvorim, Goa – 403521
+    </p>
+  </div>
 
-        <!-- <div class="info-card">
-          <i class="fa-brands fa-whatsapp"></i>
-          <h4>WhatsApp</h4>
-          <p>Chat with us instantly</p>
-        </div> -->
+  <!-- Office Address -->
+  <div class="info-card">
+    <i class="fa-solid fa-building"></i>
+    <h4>Office Address</h4>
+    <p>
+      Office No 8, Second Floor,
+      Riturai Plaza,
+      Behind Bank of India,
+      Kenni Waddo
+      Mapusa, Goa – 403507
+    </p>
+  </div>
 
-      </div>
+ 
+
+</div>
 
     </div>
   </div>
