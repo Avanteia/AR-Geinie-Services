@@ -939,6 +939,7 @@ a{
   margin-bottom: 6px;
 }
 
+
 .cta-desc {
   font-size: 1.05rem; /* 🔼 slightly bigger */
   opacity: 0.95;
@@ -1452,6 +1453,7 @@ body {
 .cta-box h2 {
   font-size: 2rem;
   margin-bottom: 14px;
+  color: white;
 }
 
 .cta-box p {

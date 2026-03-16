@@ -1,0 +1,117 @@
+@use "../abstract" as *;
+
+#loading {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: 999999;
+	margin-top: 0px;
+	top: 0px;
+	background-color: var(--bd-white);
+	&-center {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		&-absolute {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		
+			@media (min-width: $xl) {
+				width: 40%;
+			}
+		
+			@media (min-width: $lg) {
+				width: 45%;
+			}
+		
+			@media (min-width: $md) {
+				width: 50%;
+			}
+		
+			@media (min-width: $sm) {
+				width: 90%;
+			}
+		}
+	}
+}
+.bd-preloader {
+	&-logo {
+		width: 180px;
+		height: 180px;
+		line-height: 180px;
+		position: relative;
+		text-align: center;
+		margin: auto;
+		& img {
+			vertical-align: middle;
+			animation: zoom-in-zoom-out 2s ease-out infinite;
+		}
+	}
+	&-circle {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		& svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			animation: bd-rotate 5s linear infinite;
+			& circle {
+				&:last-child {
+					stroke: var(--bd-primary);
+					stroke-dashoffset: 0;
+					stroke-dasharray: 1128, 3150;
+					animation: bd-loading 4s linear infinite;
+					transform-origin: center center;
+				}
+			}
+		}
+	}
+	&-content {
+		text-align: center;
+	}
+	&-subtitle {
+		font-size: 20px;
+		margin-bottom: 0;
+		color: var(--bd-black);
+		margin-top: 20px;
+	}
+}
+
+@keyframes bd-loading {
+	0% {
+		stroke-dashoffset: 0;
+		stroke-dasharray: 0, 3150;
+	}
+	100% {
+		stroke-dashoffset: -1131;
+		stroke-dasharray: 1128, 3138;
+	}
+}
+
+@keyframes bd-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes zoom-in-zoom-out {
+	0% {
+		transform: scale(1, 1);
+	}
+	50% {
+		transform: scale(0.9, 0.9);
+	}
+	100% {
+		transform: scale(1, 1);
+	}
+}
